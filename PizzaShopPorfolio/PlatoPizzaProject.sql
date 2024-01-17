@@ -52,8 +52,8 @@ FROM sales
 GROUP BY pizza_size
 ORDER BY PCT DESC
 
--- Total Pizza Sold by Category
-SELECT pizza_category, SUM(total_price) AS Total_Sales
+-- Percentage of Pizza Sold by Category
+SELECT pizza_category, SUM(total_price) AS Total_Sales,        SUM(total_price) * 100 / (SELECT SUM(total_price) FROM sales) AS PCT
 FROM sales
 GROUP BY pizza_category;
 
