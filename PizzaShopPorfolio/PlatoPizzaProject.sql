@@ -98,7 +98,7 @@ LIMIT 5
 SELECT pizza_name, SUM(order_id) AS Total_Order
 FROM sales
 GROUP BY pizza_name
-ORDER BY Total_Revenue ASC
+ORDER BY Total_Order ASC
 LIMIT 5
 
 
